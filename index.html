@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>Cricket Scorer</title>
+
+		<link rel="stylesheet" href="styles.css" />
+		<link rel="manifest" href="manifest.webmanifest" />
+		<meta name="theme-color" content="#0b0f17" />
+		<link rel="apple-touch-icon" href="icons/icon-192.png" />
+	</head>
+
+	<body>
+		<div class="app">
+			<div class="card header">
+				<div>
+					<div class="title">🏏 Cricket Scorer</div>
+					<div class="subtitle">
+						Offline PWA • saves on this phone
+					</div>
+				</div>
+				<div
+					class="row"
+					style="justify-content: flex-end; margin-top: 0"
+				>
+					<button class="ghost" id="btnShare">Share</button>
+					<button class="ghost" id="btnShareImg">Share Image</button>
+					<button class="ghost" id="btnResetAll">Reset App</button>
+				</div>
+			</div>
+
+			<div class="card">
+				<div class="grid">
+					<div>
+						<label class="lbl">Team A name</label>
+						<input id="teamAName" value="Team A" />
+					</div>
+					<div>
+						<label class="lbl">Team B name</label>
+						<input id="teamBName" value="Team B" />
+					</div>
+				</div>
+
+				<div class="grid">
+					<div>
+						<label class="lbl">Overs limit</label>
+						<input
+							id="oversLimit"
+							type="number"
+							min="1"
+							max="50"
+							value="10"
+						/>
+					</div>
+					<div>
+						<label class="lbl">Batting first</label>
+						<select id="batFirst">
+							<option value="A">Team A</option>
+							<option value="B">Team B</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="grid">
+					<div>
+						<label class="lbl">Team A players (one per line)</label>
+						<textarea
+							id="teamAPlayers"
+							rows="5"
+							placeholder="Ali&#10;Umar&#10;Ahmad"
+						></textarea>
+					</div>
+					<div>
+						<label class="lbl">Team B players (one per line)</label>
+						<textarea
+							id="teamBPlayers"
+							rows="5"
+							placeholder="Hassan&#10;Bilal&#10;Saad"
+						></textarea>
+					</div>
+				</div>
+
+				<div class="row">
+					<button class="primary" id="btnNewMatch">
+						+ New Match
+					</button>
+					<select id="matchSelect" class="selectWide"></select>
+					<button class="ghost" id="btnLoadMatch">Load</button>
+				</div>
+			</div>
+
+			<div class="card score-hero" id="liveCard" style="display: none">
+				<div>
+					<div class="score-big" id="score">0/0 (0.0)</div>
+					<div class="subtitle" id="matchLine"></div>
+					<div class="subtitle" id="chaseLine"></div>
+				</div>
+				<div class="score-meta" id="info"></div>
+			</div>
+
+			<div class="card" id="controlCard" style="display: none">
+				<div class="grid">
+					<div>
+						<label class="lbl">Striker</label>
+						<select id="strikerSelect"></select>
+					</div>
+					<div>
+						<label class="lbl">Non-striker</label>
+						<select id="nonStrikerSelect"></select>
+					</div>
+				</div>
+
+				<div class="grid">
+					<div>
+						<label class="lbl">Bowler (start of over)</label>
+						<select id="bowlerSelect"></select>
+					</div>
+					<div class="row" style="align-items: flex-end">
+						<button class="ok" id="btnStartOver">Start Over</button>
+						<button class="ghost" id="btnUndo">Undo</button>
+						<button class="ghost" id="btnEndInnings">
+							End Innings
+						</button>
+						<button
+							class="primary"
+							id="btnStart2nd"
+							style="display: none"
+						>
+							Start 2nd Innings
+						</button>
+					</div>
+				</div>
+
+				<div class="row">
+					<button class="chip" data-run="0">0</button>
+					<
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
